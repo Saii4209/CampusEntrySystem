@@ -1,0 +1,5 @@
+# Project exclude paths
+/target/-e 
+# Database credentials
+src/main/resources/db.properties
+target/

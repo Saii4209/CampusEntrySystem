@@ -1,0 +1,205 @@
+/* =============================================================
+   student.css  —  University Attendance System
+   Theme: Maroon (#8B0000) + Gold (#FFD700 / #D4A514)
+   Target: JavaFX 21
+   ============================================================= */
+
+
+/* ── TEXT FIELDS ──────────────────────────────────────────── */
+
+.modernField {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-font-size: 15px;
+    -fx-padding: 0 14 0 14;
+}
+
+.modernField:focused {
+    -fx-border-color: #8B0000;
+    -fx-background-color: white;
+}
+
+.mainCard:hover {
+    -fx-effect: dropshadow(
+            gaussian,
+            #8B000030,
+            35,
+            0.25,
+            0,
+            10
+    );
+}
+
+
+/* ── SUBMIT BUTTON ────────────────────────────────────────── */
+
+.submitButton {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+
+.submitButton:hover {
+    -fx-background-color: #a00000;
+}
+
+.submitButton:pressed {
+    -fx-background-color: #6b0000;
+}
+
+/* ── VIEW HISTORY BUTTON ────────────────────────────────────────── */
+
+.historyButton {
+    -fx-background-color: #A00000;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 14;
+    -fx-cursor: hand;
+}
+
+.historyButton:hover {
+    -fx-background-color: #8B0000;
+}
+
+.historyButton:pressed {
+    -fx-background-color: #6b0000;
+}
+
+
+/* ── GOLD BUTTON ──────────────────────────────────────────── */
+
+.goldButton {
+    -fx-background-color: #d4a514;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.goldButton:hover {
+    -fx-background-color: #e0b41c;
+}
+
+
+/* ── DARK BUTTON ──────────────────────────────────────────── */
+
+.darkButton {
+    -fx-background-color: #475569;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.darkButton:hover {
+    -fx-background-color: #334155;
+}
+
+
+/* ── BACK BUTTON ──────────────────────────────────────────── */
+
+.backButton {
+    -fx-cursor: hand;
+}
+
+.timeInButton,
+.timeOutButton {
+    /* Layout */
+    -fx-pref-width: 264px;
+    -fx-pref-height: 64px;
+    -fx-padding: 0 20 0 20;
+
+    /* Unselected appearance */
+    -fx-background-color: white;
+    -fx-text-fill: #8B0000;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+
+    /* Border */
+    -fx-border-color: #D4A514;
+    -fx-border-width: 2.5;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+
+    /* Shadow */
+    -fx-effect: dropshadow(gaussian, #00000018, 10, 0.15, 0, 2);
+
+    -fx-cursor: hand;
+}
+
+/* Hover — unselected */
+.timeInButton:hover,
+.timeOutButton:hover {
+    -fx-background-color: #fffbeb;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, #D4A51440, 16, 0.25, 0, 4);
+}
+
+/* Pressed — unselected */
+.timeInButton:pressed,
+.timeOutButton:pressed {
+    -fx-background-color: #fef3c7;
+    -fx-border-color: #b7860a;
+}
+
+
+/* ── Selected: Time In (gold background, maroon text) ──────  */
+
+.timeInButton.selected-time-in {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #8B0000;
+    -fx-border-color: #D4A514;
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, #D4A51450, 18, 0.3, 0, 4);
+}
+
+.timeInButton.selected-time-in:hover {
+    -fx-background-color: #ffe033;
+    -fx-border-color: #b7860a;
+}
+
+
+/* ── Selected: Time Out (maroon background, white text) ─────  */
+
+.timeOutButton.selected-time-out {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-border-color: #6b0000;
+    -fx-border-width: 3;
+    -fx-effect: dropshadow(gaussian, #8B000050, 18, 0.3, 0, 4);
+}
+
+.timeOutButton.selected-time-out:hover {
+    -fx-background-color: #a00000;
+    -fx-border-color: #8B0000;
+}
+
+
+/* ── Status label colours (set via styleClass swaps) ────────  */
+
+.status-time-in {
+    -fx-font-size: 13px;
+    -fx-text-fill: #166534;
+    -fx-font-weight: bold;
+}
+
+.status-time-out {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f1d1d;
+    -fx-font-weight: bold;
+}
+
+.status-idle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748b;
+    -fx-font-style: italic;
+}

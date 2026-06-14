@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.RoleSelectionController"
+            prefWidth="1365"
+            prefHeight="700"
+            stylesheets="@style.css"
+            style="-fx-background-color: linear-gradient(to bottom, rgba(43,0,0,0.7) 0%, rgba(90,0,0,0.7) 50%, rgba(123,0,0,0.7) 100%);">
+
+    <children>
+
+        <!-- MAIN CONTAINER -->
+        <VBox alignment="TOP_CENTER"
+              spacing="30"
+              AnchorPane.topAnchor="30"
+              AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0">
+
+            <!-- TOP ICON -->
+            <StackPane prefWidth="130" prefHeight="130">
+
+                <Circle radius="60" fill="#5a0000"/>
+
+                <Label text="🏢"
+                       style="
+                           -fx-font-size: 70px;
+                           -fx-text-fill: #ffd700;
+                       "/>
+
+            </StackPane>
+
+            <!-- TITLE SECTION -->
+            <VBox alignment="CENTER" spacing="20">
+
+                <Label text="Campus Entry &amp; Exit System"
+                       styleClass="systemTitle"/>
+
+                <Label text="Select where you would like to proceed"
+                       style="
+                           -fx-font-size: 24px;
+                           -fx-text-fill: rgba(255,255,255,0.75);
+                       "/>
+
+            </VBox>
+
+            <!-- ROLE CARDS -->
+            <HBox alignment="CENTER"
+                  spacing="45"
+                  style="-fx-padding: 20 0 0 0;">
+
+                <!-- STUDENT CARD -->
+                <VBox alignment="CENTER"
+                      spacing="8"
+                      prefWidth="420"
+                      prefHeight="220"
+                      onMouseClicked="#openStudent"
+                      styleClass="roleCard"
+                      style="
+          -fx-background-color: #5a0000;
+          -fx-background-radius: 24;
+          -fx-cursor: hand;
+          -fx-border-color: #ffd700;
+          -fx-border-width: 2;
+          -fx-border-radius: 24;
+          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 25, 0.25, 0, 8);
+      ">
+
+                    <padding>
+                        <Insets top="15" right="20" bottom="15" left="20"/>
+                    </padding>
+
+                    <StackPane maxWidth="Infinity" style="-fx-alignment: center;">
+                        <StackPane prefWidth="100" prefHeight="70"
+                                   style="
+                               -fx-background-color: rgba(0,0,0,0.25);
+                               -fx-background-radius: 12;
+                               -fx-border-color: #ffd700;
+                               -fx-border-width: 1.5;
+                               -fx-border-radius: 12;
+                           ">
+                            <Label text="🎓"
+                                   style="
+                               -fx-font-size: 38px;
+                               -fx-text-fill: #ffd700;
+                               -fx-alignment: center;
+                           "/>
+                        </StackPane>
+                    </StackPane>
+
+                    <VBox alignment="CENTER" spacing="4" maxWidth="Infinity">
+
+                        <Label text="Student"
+                               maxWidth="Infinity"
+                               style="
+                   -fx-font-size: 40px;
+                   -fx-font-weight: bold;
+                   -fx-text-fill: white;
+                   -fx-alignment: center;
+               "/>
+
+                        <Label text="Record your entry and exit time"
+                               maxWidth="Infinity"
+                               style="
+                   -fx-font-size: 18px;
+                   -fx-text-fill: rgba(255,255,255,0.75);
+                   -fx-alignment: center;
+               "/>
+
+                    </VBox>
+
+                </VBox>
+
+                <!-- FACULTY CARD -->
+                <VBox alignment="CENTER"
+                      spacing="8"
+                      prefWidth="420"
+                      prefHeight="220"
+                      onMouseClicked="#openFaculty"
+                      styleClass="roleCard"
+                      style="
+          -fx-background-color: #5a0000;
+          -fx-background-radius: 24;
+          -fx-cursor: hand;
+          -fx-border-color: #ffd700;
+          -fx-border-width: 2;
+          -fx-border-radius: 24;
+          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 25, 0.25, 0, 8);
+      ">
+
+                    <padding>
+                        <Insets top="15" right="20" bottom="15" left="20"/>
+                    </padding>
+
+                    <StackPane maxWidth="Infinity" style="-fx-alignment: center;">
+                        <StackPane prefWidth="100" prefHeight="70"
+                                   style="
+                               -fx-background-color: rgba(0,0,0,0.25);
+                               -fx-background-radius: 12;
+                               -fx-border-color: #ffd700;
+                               -fx-border-width: 1.5;
+                               -fx-border-radius: 12;
+                           ">
+                            <Label text="👥"
+                                   style="
+                               -fx-font-size: 38px;
+                               -fx-text-fill: #ffd700;
+                               -fx-alignment: center;
+                           "/>
+                        </StackPane>
+                    </StackPane>
+
+                    <VBox alignment="CENTER" spacing="4" maxWidth="Infinity">
+
+                        <Label text="Faculty"
+                               maxWidth="Infinity"
+                               style="
+                   -fx-font-size: 40px;
+                   -fx-font-weight: bold;
+                   -fx-text-fill: white;
+                   -fx-alignment: center;
+               "/>
+
+                        <Label text="Access admin dashboard"
+                               maxWidth="Infinity"
+                               style="
+                   -fx-font-size: 18px;
+                   -fx-text-fill: rgba(255,255,255,0.75);
+                   -fx-alignment: center;
+               "/>
+
+                    </VBox>
+
+                </VBox>
+
+            </HBox>
+
+            <!-- FOOTER -->
+            <Label text="Powered by Campus Management System"
+                   style="
+                       -fx-font-size: 18px;
+                       -fx-text-fill: rgba(255,255,255,0.5);
+                       -fx-padding: 15 0 0 0;
+                   "/>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

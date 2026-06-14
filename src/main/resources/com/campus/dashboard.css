@@ -1,0 +1,166 @@
+/* ================= STAT CARDS ================= */
+
+.statCard {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 18;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 16;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.10),
+            14,
+            0.2,
+            0,
+            4
+    );
+}
+
+.statCard:hover {
+
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(139,0,0,0.18),
+            24,
+            0.3,
+            0,
+            8
+    );
+}
+
+/* ================= TEXT ================= */
+
+.statTitle {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.greenText {
+    -fx-font-size: 12px;
+    -fx-text-fill: #16a34a;
+}
+
+.mutedText {
+    -fx-font-size: 12px;
+    -fx-text-fill: #94a3b8;
+}
+
+/* ================= TABLE ================= */
+
+.modernTable {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.modernTable .column-header-background {
+    -fx-background-color: #f8fafc;
+}
+
+.modernTable .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #e5e7eb;
+    -fx-padding: 12;
+}
+
+.modernTable .column-header .label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.modernTable .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f1f5f9;
+    -fx-padding: 10;
+}
+
+.modernTable .table-row-cell:hover {
+    -fx-background-color: #f8fafc;
+}
+
+.modernTable .table-row-cell:selected {
+    -fx-background-color: #fee2e2;
+}
+
+.modernTable .table-cell {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+/* ================= PRIMARY BUTTON ================= */
+
+.primaryButton {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 14 22 14 22;
+    -fx-cursor: hand;
+}
+
+.primaryButton:hover {
+    -fx-background-color: #a00000;
+
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(139,0,0,0.35),
+            18,
+            0.3,
+            0,
+            5
+    );
+}
+
+/* ================= EXPORT BUTTON ================= */
+
+.exportButton {
+    -fx-background-color: white;
+    -fx-border-color: #d4a514;
+    -fx-border-width: 2;
+    -fx-text-fill: #d4a514;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 14 22 14 22;
+    -fx-cursor: hand;
+}
+
+.exportButton:hover {
+    -fx-background-color: #fff8dc;
+}
+
+/* ================= LOGOUT BUTTON ================= */
+
+.logoutButton {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 14 22 14 22;
+    -fx-cursor: hand;
+}
+
+.logoutButton:hover {
+    -fx-background-color: #a00000;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}

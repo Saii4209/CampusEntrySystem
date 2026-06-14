@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.FacultyLoginController"
+            maxWidth="Infinity"
+            maxHeight="Infinity"
+            stylesheets="@faculty.css"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- ================= HEADER ================= -->
+    <top>
+
+        <AnchorPane prefHeight="75"
+                    style="
+                        -fx-background-color: linear-gradient(to right, #8B0000, #a00000);
+                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0.2, 0, 2);
+                    ">
+
+            <children>
+
+                <!-- BACK BUTTON -->
+                <StackPane layoutX="20"
+                           layoutY="18"
+                           prefWidth="36"
+                           prefHeight="36"
+                           onMouseClicked="#back"
+                           styleClass="backButton">
+
+                    <Circle radius="18"
+                            fill="#9d1111"/>
+
+                    <Label text="←"
+                           style="
+                               -fx-font-size: 18px;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                           "/>
+
+                </StackPane>
+
+                <!-- HEADER TEXT -->
+                <VBox layoutX="65"
+                      layoutY="5"
+                      spacing="2">
+
+                    <Label text="Faculty Login Portal"
+                           style="
+                               -fx-font-size: 28px;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;
+                           "/>
+
+                    <Label text="Secure access to administrative dashboard"
+                           style="
+                               -fx-font-size: 13px;
+                               -fx-text-fill: #ffe5e5;
+                           "/>
+
+                </VBox>
+
+            </children>
+
+        </AnchorPane>
+
+    </top>
+
+    <!-- ================= CENTER CONTENT ================= -->
+    <center>
+
+        <StackPane style="-fx-background-color: #f5f5f5;">
+
+            <VBox alignment="CENTER"
+                  spacing="12"
+                  prefWidth="Infinity"
+                  prefHeight="Infinity">
+
+                <padding>
+                    <Insets top="12"
+                            right="12"
+                            bottom="12"
+                            left="12"/>
+                </padding>
+
+                <!-- LOGIN CARD -->
+                <VBox alignment="TOP_CENTER"
+                      spacing="14"
+                      prefWidth="600"
+                      maxWidth="600"
+                      styleClass="mainCard"
+                      style="
+                          -fx-background-color: white;
+                          -fx-background-radius: 24;
+                          -fx-border-radius: 24;
+                          -fx-border-color: #e5e7eb;
+                          -fx-border-width: 1;
+                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 18, 0.2, 0, 5);
+                      ">
+
+                    <padding>
+                        <Insets top="24"
+                                right="30"
+                                bottom="24"
+                                left="30"/>
+                    </padding>
+
+                    <!-- LOCK ICON -->
+                    <StackPane prefWidth="72"
+                               prefHeight="72"
+                               style="
+                                   -fx-background-color: #8B0000;
+                                   -fx-background-radius: 18;
+                               ">
+
+                        <Label text="🔒"
+                               style="
+                                   -fx-font-size: 32px;
+                                   -fx-text-fill: #ffd700;
+                               "/>
+
+                    </StackPane>
+
+                    <!-- TITLE -->
+                    <VBox alignment="CENTER"
+                          spacing="2">
+
+                        <Label text="Faculty Access"
+                               style="
+                                   -fx-font-size: 28px;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: #0f172a;
+                               "/>
+
+                        <Label text="Enter your credentials to continue"
+                               style="
+                                   -fx-font-size: 14px;
+                                   -fx-text-fill: #64748b;
+                               "/>
+
+                    </VBox>
+
+                    <!-- GOLD LINE -->
+                    <HBox alignment="CENTER"
+                          spacing="8">
+
+                        <Separator prefWidth="70"/>
+
+                        <Separator prefWidth="70"
+                                   style="-fx-background-color: #d4a514;"/>
+
+                        <Separator prefWidth="70"/>
+
+                    </HBox>
+
+                    <!-- USERNAME -->
+                    <VBox spacing="6"
+                          prefWidth="500">
+
+                        <Label text="Username *"
+                               style="
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: #334155;
+                               "/>
+
+                        <TextField fx:id="usernameField"
+                                   promptText="Enter your username"
+                                   prefHeight="42"
+                                   styleClass="modernField"/>
+
+                    </VBox>
+
+                    <!-- PASSWORD -->
+                    <VBox spacing="6"
+                          prefWidth="500">
+
+                        <Label text="Password *"
+                               style="
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: #334155;
+                               "/>
+
+                        <PasswordField fx:id="passwordField"
+                                       promptText="Enter your password"
+                                       prefHeight="42"
+                                       styleClass="modernField"/>
+
+                    </VBox>
+
+                    <!-- LOGIN BUTTON -->
+                    <Button text="Login to Dashboard"
+                            onAction="#login"
+                            prefWidth="500"
+                            prefHeight="48"
+                            styleClass="loginButton"/>
+
+                    <!-- DEMO BOX -->
+                    <VBox alignment="CENTER"
+                          spacing="8"
+                          prefWidth="500"
+                          prefHeight="70"
+                          style="
+                              -fx-background-color: #fffbeb;
+                              -fx-background-radius: 16;
+                              -fx-border-color: #f5d76e;
+                              -fx-border-radius: 16;
+                              -fx-border-width: 1.5;
+                          ">
+
+                        <Label text="Demo Credentials"
+                               style="
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: #0f172a;
+                               "/>
+
+                        <HBox alignment="CENTER"
+                              spacing="6">
+
+                            <Label text="Username:"
+                                   style="-fx-text-fill: #64748b;"/>
+
+                            <Label text="faculty"
+                                   style="
+                                       -fx-font-weight: bold;
+                                       -fx-text-fill: #8B0000;
+                                   "/>
+
+                            <Label text="|"
+                                   style="-fx-text-fill: #94a3b8;"/>
+
+                            <Label text="Password:"
+                                   style="-fx-text-fill: #64748b;"/>
+
+                            <Label text="admin123"
+                                   style="
+                                       -fx-font-weight: bold;
+                                       -fx-text-fill: #8B0000;
+                                   "/>
+
+                        </HBox>
+
+                    </VBox>
+
+                </VBox>
+
+            </VBox>
+
+        </StackPane>
+
+    </center>
+
+</BorderPane>

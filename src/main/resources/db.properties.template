@@ -1,0 +1,7 @@
+# Copy this file to db.properties and fill in your values.
+# NEVER commit db.properties to version control.
+db.host=${DB_HOST}
+db.port=${DB_PORT}
+db.name=${DB_NAME}
+db.user=${DB_USER}
+db.password=${DB_PASSWORD}

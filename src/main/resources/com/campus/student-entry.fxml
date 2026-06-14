@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.StudentEntryController"
+            stylesheets="@student.css"
+            style="-fx-background-color: #f5f5f5;">
+
+    <top>
+        <AnchorPane prefHeight="75"
+                    style="
+                        -fx-background-color: linear-gradient(to right, #8B0000, #a00000);
+                        -fx-effect: dropshadow(gaussian, #00000030, 10, 0.2, 0, 2);
+                    ">
+
+            <StackPane layoutX="20"
+                       layoutY="18"
+                       prefWidth="36"
+                       prefHeight="36"
+                       onMouseClicked="#goBack"
+                       styleClass="backButton">
+
+                <Circle radius="18" fill="#9d1111"/>
+
+                <Label text="←"
+                       style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            </StackPane>
+
+            <VBox layoutX="65"
+                  layoutY="5"
+                  spacing="2">
+
+                <Label text="Student Entry Portal"
+                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+                <Label text="Record your campus attendance"
+                       style="-fx-font-size: 13px; -fx-text-fill: #ffe5e5;"/>
+
+            </VBox>
+
+        </AnchorPane>
+    </top>
+
+    <center>
+
+        <StackPane style="-fx-background-color: #f5f5f5;">
+
+            <VBox alignment="CENTER"
+                  spacing="12">
+
+                <padding>
+                    <Insets top="12" right="12" bottom="12" left="12"/>
+                </padding>
+
+                <VBox alignment="TOP_CENTER"
+                      spacing="14"
+                      prefWidth="680"
+                      maxWidth="680"
+                      styleClass="mainCard"
+                      style="
+                          -fx-background-color: white;
+                          -fx-background-radius: 24;
+                          -fx-border-radius: 24;
+                          -fx-border-color: #e5e7eb;
+                          -fx-border-width: 1;
+                          -fx-effect: dropshadow(gaussian, #00000018, 18, 0.2, 0, 5);
+                      ">
+
+                    <padding>
+                        <Insets top="24" right="28" bottom="24" left="28"/>
+                    </padding>
+
+                    <StackPane prefWidth="72"
+                               prefHeight="72"
+                               style="-fx-background-color: #8B0000; -fx-background-radius: 18;">
+
+                        <Label text="👤"
+                               style="-fx-font-size: 32px; -fx-text-fill: #ffd700;"/>
+
+                    </StackPane>
+
+                    <VBox alignment="CENTER" spacing="2">
+
+                        <Label text="Entry Form"
+                               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+
+                        <Label text="Fill in your attendance details below"
+                               style="-fx-font-size: 14px; -fx-text-fill: #64748b;"/>
+
+                    </VBox>
+
+                    <Separator prefWidth="560"/>
+
+                    <VBox spacing="6">
+
+                        <Label text="Student ID *"
+                               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #334155;"/>
+
+                        <TextField fx:id="studentNumberField"
+                                   promptText="e.g. 2024-00001"
+                                   prefHeight="42"
+                                   styleClass="modernField"/>
+
+                    </VBox>
+
+                    <HBox alignment="CENTER" spacing="10">
+
+                        <Separator prefWidth="200"/>
+
+                        <Label text="ATTENDANCE TYPE"
+                               style="
+                                   -fx-font-size: 11px;
+                                   -fx-font-weight: bold;
+                                   -fx-text-fill: #94a3b8;
+                               "/>
+
+                        <Separator prefWidth="200"/>
+
+                    </HBox>
+
+                    <HBox spacing="20" alignment="CENTER">
+
+                        <Button fx:id="timeInButton"
+                                text="🕐 Time In"
+                                onAction="#selectTimeIn"
+                                styleClass="timeInButton"/>
+
+                        <Button fx:id="timeOutButton"
+                                text="🕔 Time Out"
+                                onAction="#selectTimeOut"
+                                styleClass="timeOutButton"/>
+
+                    </HBox>
+
+                    <HBox alignment="CENTER">
+
+                        <Label fx:id="selectionStatusLabel"
+                               text=""
+                               styleClass="status-idle"/>
+
+                    </HBox>
+
+                    <HBox alignment="CENTER"
+                          spacing="6"
+                          style="
+                              -fx-background-color: #f0f9ff;
+                              -fx-background-radius: 8;
+                              -fx-padding: 10 14 10 14;
+                              -fx-border-color: #bae6fd;
+                              -fx-border-radius: 8;
+                              -fx-border-width: 1;
+                          ">
+
+                        <Label text="ℹ"
+                               style="-fx-font-size: 15px; -fx-text-fill: #0369a1;"/>
+
+                        <Label text="The exact date and time will be recorded automatically when you submit."
+                               wrapText="true"
+                               style="-fx-font-size: 12px; -fx-text-fill: #0369a1;"/>
+
+                    </HBox>
+
+                    <Button text="Submit Entry"
+                            onAction="#submitEntry"
+                            prefWidth="560"
+                            prefHeight="48"
+                            styleClass="submitButton"/>
+
+                    <Button text="View My History"
+                            onAction="#viewHistory"
+                            prefWidth="560"
+                            prefHeight="42"
+                            styleClass="historyButton"/>
+
+                </VBox>
+
+            </VBox>
+
+        </StackPane>
+
+    </center>
+
+</BorderPane>

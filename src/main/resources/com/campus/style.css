@@ -1,0 +1,89 @@
+.systemTitle {
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 80px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FDDA0D;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.15),
+            6,
+            0.2,
+            0,
+            2
+    );
+}
+
+.systemSubtitle {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #6b7280;
+}
+
+.roleCard {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(0,0,0,0.12),
+            15,
+            0.25,
+            0,
+            4
+    );
+}
+
+.roleCard:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+
+    -fx-background-color: linear-gradient(
+            to bottom right,
+            #330000,
+            #240000
+    );
+
+    -fx-border-color: #d4af37;
+    -fx-border-width: 2;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(255,215,0,0.55),
+            45,
+            0.35,
+            0,
+            0
+    );
+}
+
+.roleCard:hover .iconBox {
+    -fx-background-color: transparent;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.roleCard:hover .iconLabel {
+    -fx-effect: null;
+}
+
+.roleCard:hover .roleTitle,
+.roleCard:hover .roleDescription {
+    -fx-text-fill: white;
+}
+
+.roleTitle {
+    -fx-font-family: "Poppins";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.roleDescription {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7280;
+}
