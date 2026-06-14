@@ -51,7 +51,10 @@ public class DashboardController {
 
     @FXML
     public void initialize() {
+        // Constrain the table so it doesn't stretch beyond the window
         entryTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        entryTableView.setMaxWidth(Double.MAX_VALUE);   // lets it fill but not overflow
+
         setupColumns();
         loadTodayData();
     }

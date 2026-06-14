@@ -53,10 +53,10 @@
                 </VBox>
 
                 <!-- ADMIN BADGE -->
-                <StackPane layoutX="1160"
-                           layoutY="18"
-                           prefWidth="140"
+                <StackPane prefWidth="140"
                            prefHeight="34"
+                           AnchorPane.rightAnchor="18"
+                           AnchorPane.topAnchor="18"
                            style="
                                -fx-background-color: rgba(255,255,255,0.12);
                                -fx-background-radius: 10;
@@ -293,34 +293,35 @@
                 <!-- TABLE -->
                 <TableView fx:id="entryTableView"
                            VBox.vgrow="ALWAYS"
-                           prefHeight="320"
+                           maxWidth="Infinity"
+                           maxHeight="Infinity"
                            styleClass="modernTable">
 
                     <columns>
 
                         <TableColumn fx:id="colStudentNumber"
                                      text="STUDENT ID"
-                                     prefWidth="160"/>
+                                     prefWidth="150"/>
 
                         <TableColumn fx:id="colStudentName"
                                      text="NAME"
-                                     prefWidth="240"/>
+                                     prefWidth="200"/>
 
                         <TableColumn fx:id="colStatus"
                                      text="STATUS"
-                                     prefWidth="130"/>
+                                     prefWidth="100"/>
 
                         <TableColumn fx:id="colTimeIn"
                                      text="TIME IN"
-                                     prefWidth="150"/>
+                                     prefWidth="120"/>
 
                         <TableColumn fx:id="colTimeOut"
                                      text="TIME OUT"
-                                     prefWidth="150"/>
+                                     prefWidth="120"/>
 
                         <TableColumn fx:id="colDate"
                                      text="DATE"
-                                     prefWidth="150"/>
+                                     prefWidth="120"/>
 
                     </columns>
 
