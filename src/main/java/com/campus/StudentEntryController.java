@@ -49,18 +49,9 @@ public class StudentEntryController {
         currentSelection = AttendanceAction.TIME_IN;
         applySelectionStyles();
     }
-
+    
     @FXML
     private void selectTimeOut() {
-        if (currentSelection != AttendanceAction.TIME_IN) {
-            showAlert(AlertType.WARNING, "Time In Required",
-                    "You have not timed in yet. Your Time In is not registered in the log.\n" +
-                            "Please select Time In first.");
-            // Switch selection to Time In so they can proceed
-            currentSelection = AttendanceAction.TIME_IN;
-            applySelectionStyles();
-            return;
-        }
         currentSelection = AttendanceAction.TIME_OUT;
         applySelectionStyles();
     }
@@ -128,6 +119,12 @@ public class StudentEntryController {
     @FXML
     private void viewHistory() {
         String studentId = studentNumberField.getText().trim();
+        if (studentId.isEmpty()) {
+            showAlert(Alert.AlertType.WARNING,
+                    "No Student Selected",
+                    "Please enter your Student ID first.");
+            return;
+        }
         if (!studentId.isEmpty()) {
             MainApp.setCurrentStudentId(studentId);
         }
