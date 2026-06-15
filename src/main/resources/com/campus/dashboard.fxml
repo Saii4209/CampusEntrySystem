@@ -282,7 +282,7 @@
                                -fx-text-fill: white;
                            "/>
 
-                    <Label text="Today's attendance log"
+                    <Label text="Today's attendance log — select a row, then use the action buttons below to edit or delete"
                            style="
                                -fx-font-size: 12px;
                                -fx-text-fill: #ffe5e5;
@@ -301,27 +301,27 @@
 
                         <TableColumn fx:id="colStudentNumber"
                                      text="STUDENT ID"
-                                     prefWidth="150"/>
+                                     prefWidth="170"/>
 
                         <TableColumn fx:id="colStudentName"
                                      text="NAME"
-                                     prefWidth="200"/>
+                                     prefWidth="230"/>
 
                         <TableColumn fx:id="colStatus"
                                      text="STATUS"
-                                     prefWidth="100"/>
+                                     prefWidth="130"/>
 
                         <TableColumn fx:id="colTimeIn"
                                      text="TIME IN"
-                                     prefWidth="120"/>
+                                     prefWidth="140"/>
 
                         <TableColumn fx:id="colTimeOut"
                                      text="TIME OUT"
-                                     prefWidth="120"/>
+                                     prefWidth="140"/>
 
                         <TableColumn fx:id="colDate"
                                      text="DATE"
-                                     prefWidth="120"/>
+                                     prefWidth="140"/>
 
                     </columns>
 
@@ -337,6 +337,26 @@
                         onAction="#addStudent"
                         prefHeight="42"
                         styleClass="primaryButton"/>
+
+                <Button text="📋 View Registered Students"
+                        onAction="#viewRegisteredStudents"
+                        prefHeight="42"
+                        styleClass="viewStudentsButton"/>
+
+                <!-- CRUD ACTION BUTTONS (operate on selected row) -->
+                <Button fx:id="editButton"
+                        text="✏ Edit Selected"
+                        onAction="#handleEditSelected"
+                        prefHeight="42"
+                        disable="true"
+                        styleClass="editActionButton"/>
+
+                <Button fx:id="deleteButton"
+                        text="🗑 Delete Selected"
+                        onAction="#handleDeleteSelected"
+                        prefHeight="42"
+                        disable="true"
+                        styleClass="deleteActionButton"/>
 
                 <Region HBox.hgrow="ALWAYS"/>
 
