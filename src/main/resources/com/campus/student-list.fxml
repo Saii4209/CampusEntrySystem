@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.StudentListController"
+            maxWidth="Infinity"
+            maxHeight="Infinity"
+            stylesheets="@dashboard.css"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- ================= HEADER ================= -->
+    <top>
+
+        <AnchorPane prefHeight="75"
+                    style="
+                        -fx-background-color: linear-gradient(to right, #8B0000, #a00000);
+                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0.2, 0, 2);
+                    ">
+
+            <children>
+
+                <!-- BACK BUTTON -->
+                <StackPane layoutX="20"
+                           layoutY="18"
+                           prefWidth="36"
+                           prefHeight="36"
+                           onMouseClicked="#goBack"
+                           styleClass="backButton"
+                           style="-fx-cursor: hand;">
+
+                    <Circle radius="18" fill="#9d1111"/>
+
+                    <Label text="←"
+                           style="
+                               -fx-font-size: 18px;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                           "/>
+
+                </StackPane>
+
+                <!-- TITLE -->
+                <VBox layoutX="70"
+                      layoutY="10"
+                      spacing="2">
+
+                    <Label text="Registered Students"
+                           style="
+                               -fx-font-size: 28px;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;
+                           "/>
+
+                    <Label text="All enrolled students in the system"
+                           style="
+                               -fx-font-size: 12px;
+                               -fx-text-fill: #ffe5e5;
+                           "/>
+
+                </VBox>
+
+                <!-- BADGE -->
+                <StackPane prefWidth="140"
+                           prefHeight="34"
+                           AnchorPane.rightAnchor="18"
+                           AnchorPane.topAnchor="18"
+                           style="
+                               -fx-background-color: rgba(255,255,255,0.12);
+                               -fx-background-radius: 10;
+                               -fx-border-color: rgba(255,255,255,0.25);
+                               -fx-border-radius: 10;
+                           ">
+
+                    <Label text="ADMIN PANEL"
+                           style="
+                               -fx-font-size: 12px;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;
+                           "/>
+
+                </StackPane>
+
+            </children>
+
+        </AnchorPane>
+
+    </top>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <center>
+
+        <VBox spacing="16"
+              style="-fx-padding: 16;">
+
+            <!-- ================= SEARCH + TOTAL BAR ================= -->
+            <HBox spacing="12"
+                  alignment="CENTER_LEFT">
+
+                <!-- SEARCH FIELD -->
+                <TextField fx:id="searchField"
+                           promptText="🔍  Search by name or student ID…"
+                           prefHeight="40"
+                           prefWidth="320"
+                           styleClass="modernField"
+                           style="
+                               -fx-background-radius: 10;
+                               -fx-border-radius: 10;
+                               -fx-border-color: #d1d5db;
+                               -fx-border-width: 1;
+                               -fx-padding: 0 12 0 12;
+                               -fx-font-size: 13px;
+                           "/>
+
+                <Button text="✕ Clear"
+                        onAction="#clearSearch"
+                        prefHeight="40"
+                        styleClass="ghostButton"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- TOTAL COUNT BADGE -->
+                <HBox alignment="CENTER"
+                      spacing="8"
+                      style="
+                          -fx-background-color: white;
+                          -fx-background-radius: 10;
+                          -fx-border-color: #e5e7eb;
+                          -fx-border-radius: 10;
+                          -fx-border-width: 1;
+                          -fx-padding: 6 16 6 16;
+                          -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 6, 0.1, 0, 2);
+                      ">
+
+                    <Label text="👥"
+                           style="-fx-font-size: 16px;"/>
+
+                    <Label text="Total Registered:"
+                           style="
+                               -fx-font-size: 13px;
+                               -fx-text-fill: #64748b;
+                               -fx-font-weight: bold;
+                           "/>
+
+                    <Label fx:id="totalStudentsLabel"
+                           text="0"
+                           style="
+                               -fx-font-size: 18px;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: #8B0000;
+                           "/>
+
+                </HBox>
+
+            </HBox>
+
+            <!-- ================= TABLE CARD ================= -->
+            <VBox spacing="0"
+                  VBox.vgrow="ALWAYS"
+                  style="
+                      -fx-background-color: white;
+                      -fx-background-radius: 18;
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 18, 0.2, 0, 4);
+                  ">
+
+                <!-- TABLE HEADER -->
+                <VBox spacing="4"
+                      style="
+                          -fx-background-color: linear-gradient(to right, #8B0000, #a00000);
+                          -fx-background-radius: 18 18 0 0;
+                          -fx-padding: 14 18 14 18;
+                      ">
+
+                    <Label text="Student Registry"
+                           style="
+                               -fx-font-size: 20px;
+                               -fx-font-weight: bold;
+                               -fx-text-fill: white;
+                           "/>
+
+                    <Label text="All registered students — select a row, then use the action buttons below to edit or delete"
+                           style="
+                               -fx-font-size: 12px;
+                               -fx-text-fill: #ffe5e5;
+                           "/>
+
+                </VBox>
+
+                <!-- TABLE -->
+                <TableView fx:id="studentTableView"
+                           VBox.vgrow="ALWAYS"
+                           maxWidth="Infinity"
+                           maxHeight="Infinity"
+                           styleClass="modernTable">
+
+                    <columns>
+
+                        <TableColumn fx:id="colId"
+                                     text="STUDENT ID"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colFullName"
+                                     text="FULL NAME"
+                                     prefWidth="230"/>
+
+                        <TableColumn fx:id="colCourse"
+                                     text="COURSE"
+                                     prefWidth="180"/>
+
+                        <TableColumn fx:id="colYearLevel"
+                                     text="YEAR LEVEL"
+                                     prefWidth="110"/>
+
+                        <TableColumn fx:id="colContact"
+                                     text="CONTACT"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colEmail"
+                                     text="EMAIL"
+                                     prefWidth="230"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+            <!-- ================= BOTTOM BUTTONS ================= -->
+            <HBox alignment="CENTER_LEFT"
+                  spacing="12">
+
+                <Button text="👥 Add New Student"
+                        onAction="#addStudent"
+                        prefHeight="42"
+                        styleClass="primaryButton"/>
+
+                <!-- CRUD ACTION BUTTONS (operate on selected row) -->
+                <Button fx:id="editButton"
+                        text="✏ Edit Selected"
+                        onAction="#handleEditSelected"
+                        prefHeight="42"
+                        disable="true"
+                        styleClass="editActionButton"/>
+
+                <Button fx:id="deleteButton"
+                        text="🗑 Delete Selected"
+                        onAction="#handleDeleteSelected"
+                        prefHeight="42"
+                        disable="true"
+                        styleClass="deleteActionButton"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="↩ Back to Dashboard"
+                        onAction="#goBack"
+                        prefHeight="42"
+                        styleClass="secondaryButton"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
