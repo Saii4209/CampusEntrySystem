@@ -139,6 +139,136 @@
     -fx-background-color: #fff8dc;
 }
 
+/* ================= VIEW STUDENTS BUTTON ================= */
+
+.viewStudentsButton {
+    -fx-background-color: white;
+    -fx-border-color: #8B0000;
+    -fx-border-width: 2;
+    -fx-text-fill: #8B0000;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 14 22 14 22;
+    -fx-cursor: hand;
+}
+
+.viewStudentsButton:hover {
+    -fx-background-color: #fef2f2;
+
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* ================= EDIT ACTION BUTTON (CRUD) ================= */
+
+.editActionButton {
+    -fx-background-color: #d4a514;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 12 22 12 22;
+    -fx-cursor: hand;
+}
+
+.editActionButton:hover {
+    -fx-background-color: #b8900f;
+
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(212,165,20,0.35),
+            18,
+            0.3,
+            0,
+            5
+    );
+}
+
+.editActionButton:disabled {
+    -fx-opacity: 0.45;
+    -fx-cursor: default;
+    -fx-effect: none;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+/* ================= DELETE ACTION BUTTON (CRUD) ================= */
+
+.deleteActionButton {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 12 22 12 22;
+    -fx-cursor: hand;
+}
+
+.deleteActionButton:hover {
+    -fx-background-color: #a00000;
+
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+
+    -fx-effect: dropshadow(
+            gaussian,
+            rgba(139,0,0,0.35),
+            18,
+            0.3,
+            0,
+            5
+    );
+}
+
+.deleteActionButton:disabled {
+    -fx-opacity: 0.45;
+    -fx-cursor: default;
+    -fx-effect: none;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+/* ================= SECONDARY BUTTON ================= */
+
+.secondaryButton {
+    -fx-background-color: #64748b;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 12 22 12 22;
+    -fx-cursor: hand;
+}
+
+.secondaryButton:hover {
+    -fx-background-color: #475569;
+
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* ================= GHOST BUTTON ================= */
+
+.ghostButton {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #374151;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+}
+
+.ghostButton:hover {
+    -fx-background-color: #d1d5db;
+}
+
 /* ================= LOGOUT BUTTON ================= */
 
 .logoutButton {
