@@ -167,8 +167,9 @@ public class AttendanceDAO {
             ps.setString(1, studentId);
             ps.setString(2, action);
             ps.setTimestamp(3, Timestamp.valueOf(ts));
+            ps.executeUpdate();
 
-            try (ResultSet rs = ps.executeQuery()) {
+            try (ResultSet rs = ps.getGeneratedKeys()) {
                 rs.next();
                 return rs.getLong(1);
             }
