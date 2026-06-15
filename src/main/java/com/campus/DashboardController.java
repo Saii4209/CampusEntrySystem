@@ -150,7 +150,7 @@ public class DashboardController {
     // ── Load Data ────────────────────────────────────────────────────────────
     private void loadTodayData() {
         try {
-            List<AttendanceRecord> records = attendanceDAO.findAllToday();
+            List<AttendanceRecord> records = attendanceDAO.findAll();
 
             Map<String, StudentDayRecord> grouped = new LinkedHashMap<>();
 
