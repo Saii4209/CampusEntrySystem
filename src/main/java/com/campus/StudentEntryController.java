@@ -125,10 +125,22 @@ public class StudentEntryController {
                     "Please enter your Student ID first.");
             return;
         }
-        if (!studentId.isEmpty()) {
+        StudentDAO studentDAO = new StudentDAO();
+
+        try {
+            if (!studentDAO.exists(studentId)) {
+                showAlert(Alert.AlertType.WARNING,
+                        "Student Not Found",
+                        "No registered student exists with ID: " + studentId);
+                return;
+            }
+
             MainApp.setCurrentStudentId(studentId);
+            MainApp.switchScene("student-history.fxml");
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        navigate("student-history.fxml", "Attendance History");
     }
 
     // ── Style helpers ─────────────────────────────────────────────────────────
